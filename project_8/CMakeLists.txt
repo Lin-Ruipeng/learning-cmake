@@ -1,0 +1,23 @@
+cmake_minimum_required(VERSION 3.20)
+project(SensorCrashTest)
+
+# 1. 创建项目
+add_executable(app main.cpp)
+
+# 2. 现代写法要求标准
+target_compile_features(app PRIVATE cxx_std_17)
+
+# 3. 条件编译
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    message(STATUS "构建模式: Debug (已开启 -g,禁用优化)")
+    target_compile_options(app PRIVATE -g -O0)
+    # target_link_options(app PRIVATE -fsanitize=address)
+elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
+    message(STATUS "构建模式：Release (已开启 -O3,极致优化)")
+    target_compile_options(app PRIVATE -O3)
+else()
+    message(WARNING "! 未指定 CMAKE_BUILD_TYPE! 默认为Debug模式.")
+    target_compile_options(app PRIVATE -g -O0)
+    # target_link_options(app PRIVATE -fsanitize=address)
+endif()
+
