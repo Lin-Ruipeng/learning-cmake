@@ -1,0 +1,4 @@
+# 文件: cmake/ImuProjectConfig.cmake.in
+# 当别人 find_package(ImuProject) 时，会执行这个文件 这里的 ImuProjectTargets.cmake 就是 CMake
+# 自动帮我们生成的包含所有头文件、链接关系的文件
+include("${CMAKE_CURRENT_LIST_DIR}/ImuProjectTargets.cmake")
