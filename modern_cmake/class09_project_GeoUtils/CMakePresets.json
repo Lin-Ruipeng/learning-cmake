@@ -1,0 +1,48 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      }
+    },
+    {
+      "name": "debug",
+      "displayName": "Debug 开发模式",
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "ENABLE_EXTRA_WARNINGS": "ON"
+      }
+    },
+    {
+      "name": "release",
+      "displayName": "Release 发布模式",
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "ENABLE_EXTRA_WARNINGS": "OFF"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "build-debug",
+      "configurePreset": "debug",
+      "jobs": 4
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "test-debug",
+      "configurePreset": "debug",
+      "output": {
+        "outputOnFailure": true
+      }
+    }
+  ]
+}

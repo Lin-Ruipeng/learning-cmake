@@ -1,0 +1,3 @@
+# GeoUtils/cmake/GeoUtilsConfig.cmake.in
+# 安装配置信息, 主要是用来汇总 Targets
+include("${CMAKE_CURRENT_LIST_DIR}/GeoUtilsTargets.cmake")
