@@ -1,0 +1,10 @@
+# .cmake-format.yaml
+format:
+  # 每行最大字符数
+  line_width: 100
+  # 缩进空格数
+  tab_size: 4
+  # 倾向于把参数放在单独的行上，更清晰
+  max_pargs_hwrap: 2
+  # 关键字大写转小写（现代 CMake 强烈建议命令全小写，如 add_executable 而不是 ADD_EXECUTABLE）
+  command_case: 'lower'

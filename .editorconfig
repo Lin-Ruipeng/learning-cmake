@@ -1,0 +1,17 @@
+# 告诉编辑器，这是最顶层的配置，不用再往上层目录找了
+root = true
+
+# 匹配所有的 C++ 头文件和源文件
+[*.{c,cpp,h,hpp}]
+indent_style = space
+indent_size = 2
+
+# json
+[*.json]
+indent_style = space
+indent_size = 2
+
+# 匹配所有的 Python 文件
+[*.py]
+indent_style = space
+indent_size = 4

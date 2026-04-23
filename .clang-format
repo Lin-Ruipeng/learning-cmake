@@ -1,0 +1,24 @@
+# 采用 Google 开源项目代码规范作为绝对基准
+BasedOnStyle: Google
+
+# --- 现代 C++ 极客微调 ---
+
+# 强制指针和引用符号靠左（现代 C++ 的灵魂）
+# 效果: int* p; (强调 int* 是一种独立的类型) 而不是 C 语言的老风格 int *p;
+PointerAlignment: Left
+
+# 允许短的单行函数、Lambda 表达式不换行（让代码更紧凑，适合高阶函数式写法）
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortLambdasOnASingleLine: All
+
+# 设置最大单行长度。Google 默认是 80，但在如今的宽屏带鱼屏时代，100 或 120 是更符合 HPC 审美的选择
+ColumnLimit: 100
+
+# 缩进宽度（Google 默认是 2）
+IndentWidth: 2
+
+# 命名空间内部不缩进（防止整个文件的代码都被往右推）
+NamespaceIndentation: None
+
+# 排序所有的 #include 头文件（极其重要的防冲突规范）
+SortIncludes: true
